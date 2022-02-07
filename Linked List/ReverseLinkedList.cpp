@@ -42,3 +42,18 @@ Node *ReverseLinkedList(Node *head)
     reverse(head, curr, prev);
     return head;
 }
+
+// Approach2 for recursion
+
+Node* reverse1(Node* head){
+    if(head==NULL || head->next == NULL){
+        return head;
+    }
+
+    Node* chotaHeaad = reverse1(head -> next);
+
+    head -> next -> next = head;
+    head -> next = NULL; 
+
+    return  chotaHead;
+}
